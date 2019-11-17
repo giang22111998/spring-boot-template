@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Danh sách sinh viên</title>
+</head>
+<body>
+<h1>Danh sách sinh viên: </h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên</th>
+            <th>Tuổi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:if="${ studentList != null && studentList.isEmpty()}">
+            <td colspan="2"> No Student Available </td>
+        </tr>
+        <tr th:each="student : ${studentList}">
+            <td><span th:text="${student.getId()}"> ID </span></td>
+            <td><span th:text="${student.getName()}"> Name </span></td>
+            <td><span th:text="${student.getAge()}"> Age </span></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
