@@ -39,3 +39,9 @@ public class StudentController {
     }
 }
 ```
+
+
+### Bật chế độ live reload
+
+1. Ấn tổ hợp phím SHIFT+CTRL+A => gõ `registry`
+2. Tích vào: `compiler.automake.allow.when.app.running`
