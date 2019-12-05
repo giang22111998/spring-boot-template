@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+    <script src="/webjars/jquery/3.1.1/jquery.min.js"></script>
+    <title>Thêm sinh viên</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css"/>
+</head>
+
+<body>
+<h1>Thêm sinh viên:</h1>
+<div class="container">
+    <form th:action="@{/student/add}" th:object="${student}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input id="id" class="form-control" type="text" th:field="*{id}" placeholder="Enter ID"/>
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" class="form-control" type="text" th:field="*{name}" placeholder="Enter Name"/>
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input id="age" class="form-control" type="text" th:field="*{age}" placeholder="Enter Age"/>
+        </div>
+        <div class="form-group">
+            <label for="avatar">Avatar</label>
+            <input id="avatar" class="form-control" type="file" th:field="*{avatarFile}" placeholder="Upload Avatar"/>
+        </div>
+        <button type="submit" class="btn btn-success">Add Student</button>
+    </form>
+</div>
+</body>
+</html>
